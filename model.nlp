@@ -1,0 +1,353 @@
+{
+  "settings": {
+    "languages": [
+      "pt"
+    ],
+    "forceNER": true,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "pt"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "pt": {
+        "settings": {
+          "locale": "pt",
+          "trainByDomain": false,
+          "tag": "domain-manager-pt",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "boa,tard": {
+            "intent": "SAUDACAO",
+            "domain": "default"
+          },
+          "bom,dia": {
+            "intent": "SAUDACAO",
+            "domain": "default"
+          },
+          "boa,noit": {
+            "intent": "SAUDACAO",
+            "domain": "default"
+          },
+          "bem,tud": {
+            "intent": "PERGUNTA",
+            "domain": "default"
+          },
+          "oi": {
+            "intent": "SAUDACAO",
+            "domain": "default"
+          },
+          "ola": {
+            "intent": "SAUDACAO",
+            "domain": "default"
+          },
+          "bom,tud": {
+            "intent": "PERGUNTA",
+            "domain": "default"
+          },
+          "hi": {
+            "intent": "SAUDACAO",
+            "domain": "default"
+          },
+          "cert,tud": {
+            "intent": "PERGUNTA",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "SAUDACAO": "default",
+          "PERGUNTA": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "boa tarde",
+            "intent": "SAUDACAO"
+          },
+          {
+            "domain": "default",
+            "utterance": "bom dia",
+            "intent": "SAUDACAO"
+          },
+          {
+            "domain": "default",
+            "utterance": "boa noite",
+            "intent": "SAUDACAO"
+          },
+          {
+            "domain": "default",
+            "utterance": "tudo bem",
+            "intent": "PERGUNTA"
+          },
+          {
+            "domain": "default",
+            "utterance": "oi",
+            "intent": "SAUDACAO"
+          },
+          {
+            "domain": "default",
+            "utterance": "olá",
+            "intent": "SAUDACAO"
+          },
+          {
+            "domain": "default",
+            "utterance": "tudo bom",
+            "intent": "PERGUNTA"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "SAUDACAO"
+          },
+          {
+            "domain": "default",
+            "utterance": "tudo certo",
+            "intent": "PERGUNTA"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "pt",
+              "tag": "nlu-pt",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "boa": 1,
+              "tard": 1,
+              "bom": 1,
+              "dia": 1,
+              "noit": 1,
+              "tud": 1,
+              "bem": 1,
+              "oi": 1,
+              "ola": 1,
+              "hi": 1,
+              "cert": 1
+            },
+            "intents": {
+              "SAUDACAO": 1,
+              "PERGUNTA": 1
+            },
+            "intentFeatures": {
+              "SAUDACAO": {
+                "boa": 1,
+                "tard": 1,
+                "bom": 1,
+                "dia": 1,
+                "noit": 1,
+                "oi": 1,
+                "ola": 1,
+                "hi": 1
+              },
+              "PERGUNTA": {
+                "tud": 1,
+                "bem": 1,
+                "bom": 1,
+                "cert": 1
+              }
+            },
+            "featuresToIntent": {
+              "boa": [
+                "SAUDACAO"
+              ],
+              "tard": [
+                "SAUDACAO"
+              ],
+              "bom": [
+                "SAUDACAO",
+                "PERGUNTA"
+              ],
+              "dia": [
+                "SAUDACAO"
+              ],
+              "noit": [
+                "SAUDACAO"
+              ],
+              "oi": [
+                "SAUDACAO"
+              ],
+              "ola": [
+                "SAUDACAO"
+              ],
+              "hi": [
+                "SAUDACAO"
+              ],
+              "tud": [
+                "PERGUNTA"
+              ],
+              "bem": [
+                "PERGUNTA"
+              ],
+              "cert": [
+                "PERGUNTA"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "pt",
+                "tag": "nlu-pt",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "boa",
+                "tard",
+                "bom",
+                "dia",
+                "noit",
+                "tud",
+                "bem",
+                "oi",
+                "ola",
+                "hi",
+                "cert"
+              ],
+              "intents": [
+                "SAUDACAO",
+                "PERGUNTA"
+              ],
+              "perceptrons": [
+                [
+                  3.7373623847961426,
+                  1.8629485368728638,
+                  0.02461615763604641,
+                  5.46914529800415,
+                  1.8749370574951172,
+                  -8.60071086883545,
+                  -1.5497736930847168,
+                  5.592238426208496,
+                  5.577948570251465,
+                  5.5874738693237305,
+                  -1.527512788772583,
+                  8.68328480893139
+                ],
+                [
+                  -1.18943452835083,
+                  -0.6184802055358887,
+                  2.2143595218658447,
+                  -3.2248501777648926,
+                  -0.521522045135498,
+                  10.616815567016602,
+                  2.5934014320373535,
+                  -1.2632285356521606,
+                  -1.2492060661315918,
+                  -1.291849136352539,
+                  2.575934886932373,
+                  1.183999049719142
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "pt",
+        "boa tarde"
+      ],
+      [
+        "pt",
+        "bom dia"
+      ],
+      [
+        "pt",
+        "boa noite"
+      ],
+      [
+        "pt",
+        "tudo bem"
+      ],
+      [
+        "pt",
+        "oi"
+      ],
+      [
+        "pt",
+        "olá"
+      ],
+      [
+        "pt",
+        "tudo bom"
+      ],
+      [
+        "pt",
+        "hi"
+      ],
+      [
+        "pt",
+        "tudo certo"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "pt": {
+        "SAUDACAO": [
+          {
+            "answer": "Olá!"
+          },
+          {
+            "answer": "Oi!"
+          },
+          {
+            "answer": "Hi!"
+          }
+        ],
+        "PERGUNTA": [
+          {
+            "answer": "Tudo, e você?"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
